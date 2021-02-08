@@ -1,6 +1,7 @@
 package main;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -32,8 +33,11 @@ public class DatosController extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher despachador = null;
 		 HashMap<String, String> datos = new HashMap<String, String>();
+		 InetAddress ip;
+		 ip = InetAddress.getLocalHost();
 		
-		 
+		 datos.put("HostName", ip.getHostName());
+		 datos.put("HostAddress", ip.getHostAddress());
 		 datos.put("prueba","Probandoooo");
 		 request.setAttribute("datos",datos);
 		request.setAttribute("error","error");
