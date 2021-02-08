@@ -1,6 +1,7 @@
 package main;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,6 +31,11 @@ public class DatosController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher despachador = null;
+		 HashMap<String, String> datos = new HashMap<String, String>();
+		
+		 
+		 datos.put("prueba","Probandoooo");
+		 request.setAttribute("datos","datos");
 		request.setAttribute("error","error");
 		 
 		 despachador = request.getServletContext().getRequestDispatcher("/index.jsp");
