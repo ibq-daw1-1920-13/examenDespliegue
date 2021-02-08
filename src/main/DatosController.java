@@ -34,7 +34,7 @@ public class DatosController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher despachador = null;
+		 RequestDispatcher despachador = null;
 		 HashMap<String, String> datos = new HashMap<String, String>();
 		 InetAddress ip;
 		 ip = InetAddress.getLocalHost();
@@ -54,12 +54,9 @@ public class DatosController extends HttpServlet {
 		 datos.put("User Dir", System.getProperty("user.dir").toLowerCase());
 		 datos.put("Java Vendor", System.getProperty("java.vendor").toLowerCase());
 		 datos.put("Java Version", System.getProperty("java.version").toLowerCase());
-		 
-		 
-		 datos.put("prueba","Probandoooo");
+			
 		 request.setAttribute("datos",datos);
-		request.setAttribute("error","error");
-		 
+				 
 		 despachador = request.getServletContext().getRequestDispatcher("/index.jsp");
 		 despachador.forward(request, response);
 		
