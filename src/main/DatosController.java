@@ -2,7 +2,10 @@ package main;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +38,9 @@ public class DatosController extends HttpServlet {
 		 HashMap<String, String> datos = new HashMap<String, String>();
 		 InetAddress ip;
 		 ip = InetAddress.getLocalHost();
+		 Calendar c = Calendar.getInstance();
+		 TimeZone tz = c.getTimeZone();
+		 Date date = new Date();
 		
 		 datos.put("HostName", ip.getHostName());
 		 datos.put("HostAddress", ip.getHostAddress());
