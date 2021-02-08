@@ -44,6 +44,18 @@ public class DatosController extends HttpServlet {
 		
 		 datos.put("HostName", ip.getHostName());
 		 datos.put("HostAddress", ip.getHostAddress());
+		 datos.put("OS Name", System.getProperty("os.name").toLowerCase());
+		 datos.put("OS Arch", System.getProperty("os.arch").toLowerCase());
+		 datos.put("OS Version", System.getProperty("os.version").toLowerCase());
+		 datos.put("Date", date.toString());
+		 datos.put("TimeZone", tz.getDisplayName());
+		 datos.put("User Name", System.getProperty("user.name").toLowerCase());
+		 datos.put("User Home", System.getProperty("user.home").toLowerCase());
+		 datos.put("User Dir", System.getProperty("user.dir").toLowerCase());
+		 datos.put("Java Vendor", System.getProperty("java.vendor").toLowerCase());
+		 datos.put("Java Version", System.getProperty("java.version").toLowerCase());
+		 
+		 
 		 datos.put("prueba","Probandoooo");
 		 request.setAttribute("datos",datos);
 		request.setAttribute("error","error");
