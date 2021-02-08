@@ -35,7 +35,7 @@ public class DatosController extends HttpServlet {
 		
 		 
 		 datos.put("prueba","Probandoooo");
-		 request.setAttribute("datos","datos");
+		 request.setAttribute("datos",datos);
 		request.setAttribute("error","error");
 		 
 		 despachador = request.getServletContext().getRequestDispatcher("/index.jsp");
