@@ -10,9 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<% int n = (int)request.getAttribute("numDatos"); 
+			out.println(n);
+		%>
 <table> 
-
 		<tr> 
           <th><b>Dato</b></th> 
           <th><b>Valor</b></th> 

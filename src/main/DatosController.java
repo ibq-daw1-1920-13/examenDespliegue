@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import data.DatosDAO;
+
 /**
  * Servlet implementation class DatosController
  */
@@ -54,7 +56,11 @@ public class DatosController extends HttpServlet {
 		 datos.put("User Dir", System.getProperty("user.dir").toLowerCase());
 		 datos.put("Java Vendor", System.getProperty("java.vendor").toLowerCase());
 		 datos.put("Java Version", System.getProperty("java.version").toLowerCase());
-			
+		 
+		 DatosDAO datosDAO = new DatosDAO();
+		 datosDAO.insertarDatos(datos);
+		 
+		 request.setAttribute("numDatos",datosDAO.getNumDatos());
 		 request.setAttribute("datos",datos);
 				 
 		 despachador = request.getServletContext().getRequestDispatcher("/index.jsp");
